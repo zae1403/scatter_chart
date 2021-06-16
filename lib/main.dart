@@ -1,9 +1,6 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-
 import 'package:flutter_echarts/flutter_echarts.dart';
 
 void main() => runApp(MyApp());
@@ -28,14 +25,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
   final PageController pageController = PageController(viewportFraction: 0.9);
 
-  List<Map<String, dynamic>> _data1 = [
-    {'name': 'Please wait', 'value': 0}
-  ];
-
-  List<Color> colors = [
+  final List<Color> colors = [
     Colors.blue,
     Colors.green,
     Colors.red,
@@ -45,7 +37,9 @@ class _MyHomePageState extends State<MyHomePage> {
     Colors.purple
   ];
 
-  Random random = Random();
+  List<Map<String, dynamic>> _data1 = [
+    {'name': 'Please wait', 'value': 0}
+  ];
 
   int currentIndex = -1;
   late final webcontroller;
@@ -98,7 +92,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey,
       appBar: AppBar(
         title: Text('Flutter Echarts'),
       ),
